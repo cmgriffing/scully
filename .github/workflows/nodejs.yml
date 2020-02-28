@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   lint:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.LINTER_TOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:
